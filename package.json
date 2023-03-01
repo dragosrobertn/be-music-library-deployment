@@ -1,0 +1,38 @@
+{
+  "name": "backend-postgres-music-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "node scripts/migrate.js",
+    "prestart": "node scripts/create-database.js && npm run migrate",
+    "start": "nodemon -r dotenv/config index.js",
+    "pretest": "node scripts/create-database.js test && npm run migrate test",
+    "test": "mocha tests/**/*.js --exit --recursive --timeout 60000 --file ./scripts/test-setup.js",
+    "posttest": "node scripts/drop-database.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MCRcodes/backend-postgres-music-library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MCRcodes/backend-postgres-music-library/issues"
+  },
+  "homepage": "https://github.com/MCRcodes/backend-postgres-music-library#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "joi": "^17.6.4",
+    "pg": "^8.8.0",
+    "postgres-migrations": "^5.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.26.0",
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.0"
+  }
+}
