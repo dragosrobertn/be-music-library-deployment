@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: music-library-drn-oct22
+    name: music-library-drn-march22
     env: node
     region: frankfurt
     plan: free
@@ -9,27 +9,27 @@ services:
     envVars:
       - key: PGDATABASE
         fromDatabase: 
-          name: music-library-database-drn-oct22
+          name: music-library-database-drn-march23
           property: database
       - key: PGUSER
         fromDatabase: 
-          name: music-library-database-drn-oct22
+          name: music-library-database-drn-march23
           property: user
       - key: PGPASSWORD
         fromDatabase: 
-          name: music-library-database-drn-oct22
+          name: music-library-database-drn-march23
           property: password
       - key: PGHOST
         fromDatabase: 
-          name: music-library-database-drn-oct22
+          name: music-library-database-drn-march23
           property: host
       - key: PGPORT
         fromDatabase: 
-          name: music-library-database-drn-oct22
+          name: music-library-database-drn-march23
           property: port
 
 databases:
-  - name: music-library-database-drn-oct22
+  - name: music-library-database-drn-march23
     plan: free
     region: frankfurt
     databaseName: music_library
